@@ -562,18 +562,22 @@
 
       return `
         <article class="tile">
-          <div class="thumb">
-            <img src="${esc(img)}" alt="${esc(title)}" loading="lazy" />
-            <div class="play" aria-hidden="true"></div>
-          </div>
-          <div class="tileBody">
-            <h3 class="tileTitle">${esc(title)}</h3>
-            <p class="tileDesc">${esc(tileDesc)}</p>
-            <a class="tileLink" href="${esc(url)}" target="_blank" rel="noopener">
-              View guide →
-            </a>
-          </div>
-        </article>
+      <div class="thumb">
+        <img
+          src="${esc(img)}"
+          alt="${esc(title)}"
+          loading="lazy"
+          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1581091215367-59ab6b1b3f1a?auto=format&fit=crop&w=1600&q=80';"
+        />
+        <div class="play" aria-hidden="true"></div>
+      </div>
+      <div class="tileBody">
+        <h3 class="tileTitle">${esc(title)}</h3>
+        <a class="tileLink" href="${esc(url)}" target="_blank" rel="noopener">
+          View guide →
+        </a>
+      </div>
+    </article>
       `;
     }
 
