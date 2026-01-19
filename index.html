@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>helper.diy — Get unstuck</title>
-  <meta name="description" content="Quick answers for DIY repair costs, fix vs replace decisions, and common problems. No fluff. Just help." />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>helper.diy | DIY Projects and Ideas</title>
+  <meta name="description" content="DIY guides, repair cost estimates, and quick decision tools. Find the next best step in under two minutes." />
   <meta name="robots" content="index,follow" />
 
-  <!-- GA4 -->
+  <!-- GA4 (optional): replace G-XXXXXXXXXX or delete this block -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -17,91 +17,509 @@
   </script>
 
   <style>
+    :root{
+      --bg:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --line:#e5e7eb;
+      --panel:#ffffff;
+      --soft:#f8fafc;
+      --accent:#f97316; /* orange CTA */
+      --accent2:#111827;
+      --shadow: 0 10px 30px rgba(2,6,23,.08);
+      --radius: 12px;
+      --max: 1200px;
+      --sidebar: 260px;
+    }
+
+    *{box-sizing:border-box}
     body{
       margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background:#0b0c10;
-      color:#eef2ff;
+      color:var(--text);
+      background:var(--bg);
+    }
+    a{color:inherit}
+    .topbar{
+      border-bottom:1px solid var(--line);
+      background:#fff;
+    }
+    .topbar__wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:14px 18px;
       display:flex;
-      min-height:100vh;
       align-items:center;
-      justify-content:center;
+      justify-content:space-between;
+      gap:12px;
     }
-    .wrap{
-      max-width:720px;
-      padding:32px;
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      text-decoration:none;
+      font-weight:800;
+      letter-spacing:.2px;
     }
-    h1{
-      font-size:40px;
-      line-height:1.15;
-      margin:0 0 16px;
+    .brand__dot{
+      width:10px;height:10px;border-radius:999px;
+      background:var(--accent);
+      box-shadow:0 0 0 4px rgba(249,115,22,.18);
     }
-    p{
-      font-size:18px;
-      color:#b7c0d8;
-      margin:0 0 28px;
+    .topnav{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      font-size:14px;
+      color:var(--muted);
+      flex-wrap:wrap;
+      justify-content:flex-end;
     }
-    ul{
+    .topnav a{
+      text-decoration:none;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid transparent;
+    }
+    .topnav a:hover{
+      border-color:var(--line);
+      background:var(--soft);
+      color:var(--text);
+    }
+    .topnav .pill{
+      border:1px solid var(--line);
+      background:var(--soft);
+      color:var(--text);
+      font-weight:700;
+    }
+
+    .page{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:18px;
+    }
+
+    .h1{
+      font-size:44px;
+      letter-spacing:.6px;
+      margin:8px 0 14px;
+      font-weight:900;
+      text-transform:uppercase;
+    }
+
+    .layout{
+      display:grid;
+      grid-template-columns: var(--sidebar) 1fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    /* Sidebar */
+    .sidebar{
+      position:sticky;
+      top:18px;
+      border-right:1px solid var(--line);
+      padding-right:14px;
+      min-height: 300px;
+    }
+    .sideList{
       list-style:none;
       padding:0;
       margin:0;
-      display:grid;
-      gap:14px;
-    }
-    a{
-      display:block;
-      padding:16px 18px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.15);
-      text-decoration:none;
-      color:#eef2ff;
-      font-weight:600;
-      background:rgba(255,255,255,.04);
-    }
-    a:hover{
-      border-color:#7dd3fc;
-    }
-    footer{
-      margin-top:24px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
       font-size:14px;
-      color:#b7c0d8;
+    }
+    .sideList a{
+      text-decoration:none;
+      color:var(--muted);
+      line-height:1.25;
+    }
+    .sideList a:hover{
+      color:var(--text);
+      text-decoration:underline;
+      text-underline-offset:3px;
+    }
+
+    /* Hero row */
+    .heroRow{
+      display:grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .heroCard{
+      border:1px solid var(--line);
+      background:var(--panel);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow: var(--shadow);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      min-height: 260px;
+    }
+    .heroEyebrow{
+      font-size:12px;
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      margin:0 0 10px;
+    }
+    .heroTitle{
+      margin:0 0 10px;
+      font-size:34px;
+      font-weight:900;
+      letter-spacing:.4px;
+      text-transform:uppercase;
+    }
+    .heroSub{
+      margin:0 0 16px;
+      color:var(--muted);
+      max-width: 52ch;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 14px;
+      border-radius:10px;
+      border:1px solid rgba(249,115,22,.55);
+      background: var(--accent);
+      color:#fff;
+      text-decoration:none;
+      font-weight:800;
+      width: fit-content;
+    }
+    .btn:hover{filter:brightness(.96)}
+    .heroMedia{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      background:#ddd;
+      min-height:260px;
+    }
+    .heroMedia img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    /* Section heading */
+    .sectionTitle{
+      margin:26px 0 12px;
+      font-size:34px;
+      font-weight:900;
+      letter-spacing:.4px;
+      text-transform:uppercase;
+    }
+
+    /* Video grid */
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:18px;
+    }
+    .tile{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      overflow:hidden;
+      background:var(--panel);
+      box-shadow: var(--shadow);
+    }
+    .thumb{
+      position:relative;
+      aspect-ratio: 16 / 9;
+      background:#e5e7eb;
+      overflow:hidden;
+    }
+    .thumb img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .play{
+      position:absolute;
+      inset:auto auto 14px 14px;
+      width:42px;height:42px;border-radius:999px;
+      display:grid;place-items:center;
+      background: rgba(255,255,255,.92);
+      border:1px solid rgba(15,23,42,.12);
+      box-shadow: 0 10px 22px rgba(2,6,23,.18);
+    }
+    .play:before{
+      content:"";
+      width:0;height:0;
+      border-left:12px solid var(--accent);
+      border-top:8px solid transparent;
+      border-bottom:8px solid transparent;
+      margin-left:2px;
+    }
+    .tileBody{
+      padding:14px 14px 16px;
+    }
+    .tileTitle{
+      margin:0 0 8px;
+      font-size:20px;
+      font-weight:900;
+      letter-spacing:.2px;
+    }
+    .tileDesc{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.45;
+      min-height: 42px;
+    }
+    .tileLink{
+      margin-top:12px;
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      text-decoration:none;
+      font-weight:800;
+      color:var(--accent2);
+      font-size:14px;
+    }
+    .tileLink:hover{text-decoration:underline; text-underline-offset:3px;}
+
+    /* Footer */
+    footer{
+      margin-top:34px;
+      border-top:1px solid var(--line);
+      padding:18px 0;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .footWrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:0 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .layout{grid-template-columns: 1fr;}
+      .sidebar{
+        position:static;
+        border-right:none;
+        padding-right:0;
+        border-bottom:1px solid var(--line);
+        padding-bottom:14px;
+      }
+      .heroRow{grid-template-columns: 1fr;}
+      .grid3{grid-template-columns: 1fr;}
+      .h1{font-size:34px}
+      .sectionTitle{font-size:28px}
+      .heroTitle{font-size:28px}
     }
   </style>
 </head>
 
 <body>
-  <main class="wrap">
-    <h1>What are you stuck on?</h1>
-    <p>
-      helper.diy gives quick answers so you can decide what to do next.
-      No brand pitch. No guessing.
-    </p>
+  <header class="topbar">
+    <div class="topbar__wrap">
+      <a class="brand" href="/">
+        <span class="brand__dot" aria-hidden="true"></span>
+        <span>helper.diy</span>
+      </a>
 
-    <ul>
-      <li>
-        <a href="/p/hover-1-repair-cost/">
-          How much does it cost to fix this?
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          Is it worth fixing or should I replace it?
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          Why won’t this thing work?
-        </a>
-      </li>
-    </ul>
+      <nav class="topnav">
+        <a class="pill" href="/#trending">Trending</a>
+        <a href="/p/how-much-does-it-cost-to-fix-an-electric-scooter/">E-Scooter Costs</a>
+        <a href="/p/is-it-worth-fixing-electric-scooter/">Repair vs Replace</a>
+        <a href="https://fixpixie.com">Fix Pixie</a>
+      </nav>
+    </div>
+  </header>
 
-    <footer>
-      If you want a guided fix plan, try
-      <a href="https://fixpixie.com" style="display:inline;border:none;padding:0;background:none;">
-        Fix Pixie
-      </a>.
-    </footer>
+  <main class="page">
+    <h1 class="h1">DIY Projects and Ideas</h1>
+
+    <section class="layout">
+      <!-- LEFT NAV -->
+      <aside class="sidebar" aria-label="DIY categories">
+        <ul class="sideList">
+          <li><a href="#guides">View All Guides</a></li>
+          <li><a href="#workshops">DIY Workshops</a></li>
+          <li><a href="#calculators">DIY Project Calculators</a></li>
+          <li><a href="#garden">Garden Ideas &amp; Projects</a></li>
+          <li><a href="#bathroom">Bathroom Ideas &amp; Projects</a></li>
+          <li><a href="#lawn">Lawn &amp; Landscaping Ideas &amp; Projects</a></li>
+          <li><a href="#deck">Deck &amp; Fence Ideas</a></li>
+          <li><a href="#kids">Activities for Kids</a></li>
+          <li><a href="#cleaning">Cleaning Guides</a></li>
+          <li><a href="#paint">Paint Ideas &amp; Projects</a></li>
+          <li><a href="#flooring">Flooring Ideas &amp; Projects</a></li>
+          <li><a href="#kitchen">Kitchen Ideas &amp; Projects</a></li>
+          <li><a href="#materials">Building Material Guides</a></li>
+          <li><a href="#living">Living Room Ideas &amp; Projects</a></li>
+
+          <!-- Your real focus -->
+          <li style="margin-top:10px;"><a href="/p/how-much-does-it-cost-to-fix-an-electric-scooter/">DIY E-Scooter Repair</a></li>
+          <li><a href="/p/electric-scooter-wont-charge/">Scooter Won’t Charge</a></li>
+          <li><a href="/p/electric-scooter-wont-turn-on/">Scooter Won’t Turn On</a></li>
+          <li><a href="/p/electric-scooter-flat-tire-fix-cost/">Flat Tire Cost</a></li>
+          <li><a href="/p/electric-scooter-battery-replacement-cost/">Battery Cost</a></li>
+        </ul>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <section>
+        <!-- HERO -->
+        <div class="heroRow" id="guides">
+          <div class="heroCard">
+            <p class="heroEyebrow">Featured guide</p>
+            <h2 class="heroTitle">Your home, even better</h2>
+            <p class="heroSub">
+              Start with quick, practical guides that reduce guesswork. Clear cost ranges, simple checks, and a recommended next step.
+            </p>
+            <a class="btn" href="/p/how-much-does-it-cost-to-fix-an-electric-scooter/">Learn More</a>
+          </div>
+
+          <div class="heroMedia" aria-label="Hero image">
+            <!-- Replace this image URL with your own. Keep a wide photo. -->
+            <img
+              src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1600&q=80"
+              alt="Person working on a home project in a bright kitchen"
+              loading="eager"
+            />
+          </div>
+        </div>
+
+        <!-- TRENDING -->
+        <h2 class="sectionTitle" id="trending">Trending DIY Videos</h2>
+
+        <div class="grid3">
+          <!-- Tile 1 -->
+          <article class="tile">
+            <div class="thumb">
+              <img
+                src="https://images.unsplash.com/photo-1581579185169-20b3a8c45b5b?auto=format&fit=crop&w=1600&q=80"
+                alt="Tools and supplies on a workspace"
+                loading="lazy"
+              />
+              <div class="play" aria-hidden="true"></div>
+            </div>
+            <div class="tileBody">
+              <h3 class="tileTitle">How Much Does It Cost to Fix an Electric Scooter?</h3>
+              <p class="tileDesc">A realistic cost table by problem type: tire, brakes, charger, controller, and battery.</p>
+              <a class="tileLink" href="/p/how-much-does-it-cost-to-fix-an-electric-scooter/">Watch guide →</a>
+            </div>
+          </article>
+
+          <!-- Tile 2 -->
+          <article class="tile">
+            <div class="thumb">
+              <img
+                src="https://images.unsplash.com/photo-1581091215367-59ab6b1b3f1a?auto=format&fit=crop&w=1600&q=80"
+                alt="Hands working with small electronics"
+                loading="lazy"
+              />
+              <div class="play" aria-hidden="true"></div>
+            </div>
+            <div class="tileBody">
+              <h3 class="tileTitle">Electric Scooter Won’t Charge</h3>
+              <p class="tileDesc">A fast troubleshooting order that helps you avoid buying the wrong part.</p>
+              <a class="tileLink" href="/p/electric-scooter-wont-charge/">Watch guide →</a>
+            </div>
+          </article>
+
+          <!-- Tile 3 -->
+          <article class="tile">
+            <div class="thumb">
+              <img
+                src="https://images.unsplash.com/photo-1589923188651-268a9765e432?auto=format&fit=crop&w=1600&q=80"
+                alt="A clean garage workspace with tools"
+                loading="lazy"
+              />
+              <div class="play" aria-hidden="true"></div>
+            </div>
+            <div class="tileBody">
+              <h3 class="tileTitle">Is It Worth Fixing an Electric Scooter?</h3>
+              <p class="tileDesc">A simple decision guide: when repair makes sense, and when replacement wins.</p>
+              <a class="tileLink" href="/p/is-it-worth-fixing-electric-scooter/">Watch guide →</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- OPTIONAL: second row like the screenshot area below videos -->
+        <h2 class="sectionTitle" id="calculators" style="margin-top:28px;">Quick Tools</h2>
+        <div class="grid3">
+          <article class="tile">
+            <div class="thumb">
+              <img
+                src="https://images.unsplash.com/photo-1581091012184-5c1d7ad0b2fb?auto=format&fit=crop&w=1600&q=80"
+                alt="Battery and electronics close-up"
+                loading="lazy"
+              />
+              <div class="play" aria-hidden="true"></div>
+            </div>
+            <div class="tileBody">
+              <h3 class="tileTitle">Battery Replacement Cost</h3>
+              <p class="tileDesc">Cost ranges and what changes price: voltage, capacity, BMS, and fit.</p>
+              <a class="tileLink" href="/p/electric-scooter-battery-replacement-cost/">Open tool →</a>
+            </div>
+          </article>
+
+          <article class="tile">
+            <div class="thumb">
+              <img
+                src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&w=1600&q=80"
+                alt="A tire and wheel close-up"
+                loading="lazy"
+              />
+              <div class="play" aria-hidden="true"></div>
+            </div>
+            <div class="tileBody">
+              <h3 class="tileTitle">Flat Tire Fix Cost</h3>
+              <p class="tileDesc">Parts vs labor, plus when solid tires make sense (and when they do not).</p>
+              <a class="tileLink" href="/p/electric-scooter-flat-tire-fix-cost/">Open tool →</a>
+            </div>
+          </article>
+
+          <article class="tile">
+            <div class="thumb">
+              <img
+                src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1600&q=80"
+                alt="Power button and electronics concept"
+                loading="lazy"
+              />
+              <div class="play" aria-hidden="true"></div>
+            </div>
+            <div class="tileBody">
+              <h3 class="tileTitle">Scooter Won’t Turn On</h3>
+              <p class="tileDesc">A quick isolation flow: charger/port vs battery vs display/controller.</p>
+              <a class="tileLink" href="/p/electric-scooter-wont-turn-on/">Open tool →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </section>
   </main>
+
+  <footer>
+    <div class="footWrap">
+      <div>© <span id="y"></span> helper.diy</div>
+      <div>
+        <a href="https://fixpixie.com" style="text-decoration:none;">Try Fix Pixie</a>
+        <span style="margin:0 10px;color:var(--line);">|</span>
+        <a href="/p/how-much-does-it-cost-to-fix-an-electric-scooter/" style="text-decoration:none;">Start here</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-
