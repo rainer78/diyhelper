@@ -16,6 +16,21 @@
     gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
   </script>
 
+  <!-- =========================
+       ADSENSE PLACEHOLDER NOTE
+       - Leave the blocks below as placeholders until you have:
+         1) a real data-ad-client (ca-pub-xxxxxxxxxxxxxxx)
+         2) real data-ad-slot IDs
+       - When ready, uncomment the AdSense script and replace IDs.
+  ========================== -->
+
+  <!-- AdSense (uncomment when approved + you have your publisher ID) -->
+  <!--
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+  -->
+
   <style>
     :root{
       --bg:#ffffff;
@@ -64,7 +79,7 @@
     .brand__dot{
       width:10px;height:10px;border-radius:999px;
       background:var(--accent);
-  box-shadow:0 0 0 4px rgba(144,64,208,.22);
+      box-shadow:0 0 0 4px rgba(144,64,208,.22);
     }
     .topnav{
       display:flex;
@@ -186,15 +201,17 @@
       padding:12px 14px;
       border-radius:10px;
       border:1px solid rgba(144,64,208,.55);
-  background: var(--accent);
-  color:#fff;
+      background: var(--accent);
+      color:#fff;
       text-decoration:none;
       font-weight:800;
       width: fit-content;
     }
-    .btn:hover{background:#7C2FC2;
-  border-color: rgba(124,47,194,.65);
-  filter:brightness(.96)}
+    .btn:hover{
+      background:#7C2FC2;
+      border-color: rgba(124,47,194,.65);
+      filter:brightness(.96)
+    }
     .heroMedia{
       border:1px solid var(--line);
       border-radius:var(--radius);
@@ -289,6 +306,37 @@
     }
     .tileLink:hover{text-decoration:underline; text-underline-offset:3px;}
 
+    /* =========================
+       ADS PLACEHOLDERS (STYLES)
+    ========================== */
+    .adSlot{
+      border:1px dashed rgba(15,23,42,.25);
+      background: linear-gradient(180deg, rgba(248,250,252,.9), rgba(248,250,252,.6));
+      border-radius: 12px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.25;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding: 10px;
+      min-height: 90px;
+    }
+    .adSlot strong{
+      display:block;
+      color: var(--text);
+      font-weight: 900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-size: 11px;
+      margin-bottom: 4px;
+    }
+    .adSlot--leaderboard{ min-height: 90px; }
+    .adSlot--inline{ min-height: 250px; }
+    .adSlot--sidebar{ min-height: 600px; position: sticky; top: 18px; }
+    .adBreak{ margin: 18px 0; }
+
     /* Footer */
     footer{
       margin-top:34px;
@@ -323,6 +371,9 @@
       .h1{font-size:34px}
       .sectionTitle{font-size:28px}
       .heroTitle{font-size:28px}
+
+      /* sidebar skyscraper ad becomes normal block on mobile */
+      .adSlot--sidebar{ position:static; min-height: 250px; }
     }
   </style>
 </head>
@@ -347,33 +398,73 @@
   <main class="page">
     <h1 class="h1">DIY Projects and Ideas</h1>
 
+    <!-- TOP LEADERBOARD AD PLACEHOLDER -->
+    <div class="adBreak" aria-label="Advertisement">
+      <div class="adSlot adSlot--leaderboard" data-ad-placeholder="top-leaderboard">
+        <div>
+          <strong>Ad slot</strong>
+          728×90 / Responsive Leaderboard<br/>
+          <span style="opacity:.9">Place: below H1</span>
+        </div>
+      </div>
+
+      <!-- When ready, replace the placeholder above with a real AdSense unit like below. -->
+      <!--
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXX"
+           data-ad-slot="1234567890"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      -->
+    </div>
+
     <section class="layout">
       <!-- LEFT NAV -->
       <aside class="sidebar" aria-label="DIY categories">
         <ul class="sideList">
           <li><a href="#guides">All DIY Guides</a></li>
 
+          <li><a href="#garden">Garden Projects & Ideas</a></li>
+          <li><a href="#bathroom">Bathroom DIY Projects</a></li>
+          <li><a href="#lawn">Outdoor & Landscaping Projects</a></li>
+          <li><a href="#deck">Deck & Fence Projects</a></li>
+          <li><a href="#kids">DIY Projects for Kids</a></li>
+          <li><a href="#cleaning">Cleaning & Maintenance Guides</a></li>
+          <li><a href="#paint">Painting Projects & Ideas</a></li>
+          <li><a href="#flooring">Flooring DIY Projects</a></li>
+          <li><a href="#kitchen">Kitchen DIY Projects</a></li>
+          <li><a href="#materials">Materials & Supplies Guides</a></li>
+          <li><a href="#living">Small Space & Living Area Projects</a></li>
 
-<li><a href="#garden">Garden Projects & Ideas</a></li>
-<li><a href="#bathroom">Bathroom DIY Projects</a></li>
-<li><a href="#lawn">Outdoor & Landscaping Projects</a></li>
-<li><a href="#deck">Deck & Fence Projects</a></li>
-<li><a href="#kids">DIY Projects for Kids</a></li>
-<li><a href="#cleaning">Cleaning & Maintenance Guides</a></li>
-<li><a href="#paint">Painting Projects & Ideas</a></li>
-<li><a href="#flooring">Flooring DIY Projects</a></li>
-<li><a href="#kitchen">Kitchen DIY Projects</a></li>
-<li><a href="#materials">Materials & Supplies Guides</a></li>
-<li><a href="#living">Small Space & Living Area Projects</a></li>
-
-
-          <!-- Your real focus -->
           <li style="margin-top:10px;"><a href="/p/how-much-does-it-cost-to-fix-an-electric-scooter/">DIY E-Scooter Repair</a></li>
           <li><a href="/p/electric-scooter-wont-charge/">Scooter Won’t Charge</a></li>
           <li><a href="/p/electric-scooter-wont-turn-on/">Scooter Won’t Turn On</a></li>
           <li><a href="/p/electric-scooter-flat-tire-fix-cost/">Flat Tire Cost</a></li>
           <li><a href="/p/electric-scooter-battery-replacement-cost/">Battery Cost</a></li>
         </ul>
+
+        <!-- SIDEBAR SKYSCRAPER AD PLACEHOLDER -->
+        <div class="adBreak" aria-label="Advertisement" style="margin-top:16px;">
+          <div class="adSlot adSlot--sidebar" data-ad-placeholder="sidebar-skyscraper">
+            <div>
+              <strong>Ad slot</strong>
+              300×600 / Responsive Sidebar<br/>
+              <span style="opacity:.9">Place: below sidebar links</span>
+            </div>
+          </div>
+
+          <!-- When ready:
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-XXXXXXXXXXXXXXX"
+               data-ad-slot="2345678901"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+          -->
+        </div>
       </aside>
 
       <!-- MAIN CONTENT -->
@@ -384,23 +475,42 @@
             <p class="heroEyebrow">Featured guide</p>
             <h2 class="heroTitle">DIY projects, made clearer</h2>
             <p class="heroSub">
-             Start with practical project guides that cut through guesswork. Each guide includes realistic cost ranges, simple checks, and a clear next step so you know exactly how to move forward.
+              Start with practical project guides that cut through guesswork. Each guide includes realistic cost ranges, simple checks, and a clear next step so you know exactly how to move forward.
             </p>
             <a class="btn" href="/p/how-much-does-it-cost-to-fix-an-electric-scooter/">Learn More</a>
           </div>
 
           <div class="heroMedia" aria-label="Hero image">
-  <!-- Wide image showing hands-on DIY work in progress -->
-  <img
-    src="https://github.com/rainer78/diyhelper/blob/main/img/helper-diy-hero.png?raw=true?auto=format&fit=crop&w=1600&q=80"
-    alt="Person actively working on a DIY project, measuring and assembling materials"
-    loading="eager"
-  />
-</div>
-
+            <img
+              src="https://github.com/rainer78/diyhelper/blob/main/img/helper-diy-hero.png?raw=true?auto=format&fit=crop&w=1600&q=80"
+              alt="Person actively working on a DIY project, measuring and assembling materials"
+              loading="eager"
+            />
+          </div>
         </div>
 
-             <!-- TRENDING -->
+        <!-- IN-CONTENT AD PLACEHOLDER (between hero and trending) -->
+        <div class="adBreak" aria-label="Advertisement">
+          <div class="adSlot adSlot--inline" data-ad-placeholder="mid-hero-rectangle">
+            <div>
+              <strong>Ad slot</strong>
+              300×250 / Responsive Rectangle<br/>
+              <span style="opacity:.9">Place: between Hero and Trending</span>
+            </div>
+          </div>
+
+          <!-- When ready:
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-XXXXXXXXXXXXXXX"
+               data-ad-slot="3456789012"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+          -->
+        </div>
+
+        <!-- TRENDING -->
         <h2 class="sectionTitle" id="trending">Trending DIY Videos</h2>
 
         <!-- Row 1 -->
@@ -459,6 +569,27 @@
 
         </div>
 
+        <!-- IN-FEED AD PLACEHOLDER (between video rows) -->
+        <div class="adBreak" aria-label="Advertisement">
+          <div class="adSlot adSlot--leaderboard" data-ad-placeholder="between-video-rows">
+            <div>
+              <strong>Ad slot</strong>
+              728×90 / Responsive Banner<br/>
+              <span style="opacity:.9">Place: between Trending Row 1 and Row 2</span>
+            </div>
+          </div>
+
+          <!-- When ready:
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-XXXXXXXXXXXXXXX"
+               data-ad-slot="4567890123"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+          -->
+        </div>
+
         <!-- Row 2 -->
         <div class="grid3" style="margin-top:28px;">
 
@@ -515,137 +646,199 @@
 
         </div>
 
+        <!-- POST-TRENDING AD PLACEHOLDER -->
+        <div class="adBreak" aria-label="Advertisement" style="margin-top:22px;">
+          <div class="adSlot adSlot--inline" data-ad-placeholder="post-trending-rectangle">
+            <div>
+              <strong>Ad slot</strong>
+              300×250 / Responsive Rectangle<br/>
+              <span style="opacity:.9">Place: after Trending grid</span>
+            </div>
+          </div>
+
+          <!-- When ready:
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-XXXXXXXXXXXXXXX"
+               data-ad-slot="5678901234"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+          -->
+        </div>
+
         <!-- GUIDES (iFixit-powered) -->
-<h2 class="sectionTitle" id="guides" style="margin-top:28px;">DIY Repair Guides</h2>
+        <h2 class="sectionTitle" id="guides" style="margin-top:28px;">DIY Repair Guides</h2>
 
-<!-- This grid will be filled by the script -->
-<div id="ifixitGuidesGrid" class="grid3"></div>
+        <!-- This grid will be filled by the script -->
+        <div id="ifixitGuidesGrid" class="grid3"></div>
 
-<script>
-  (function () {
-    const grid = document.getElementById("ifixitGuidesGrid");
-    if (!grid) return;
-
-    const API_URL = "https://www.ifixit.com/api/2.0/guides?limit=50&order=DESC";
-
-    const FALLBACK_IMG =
-      "https://images.unsplash.com/photo-1581091215367-59ab6b1b3f1a?auto=format&fit=crop&w=1600&q=80";
-
-    function esc(s) {
-      return String(s ?? "")
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
-    }
-
-    function makeTile(g) {
-      const title = g?.title || "Untitled guide";
-
-      const descParts = [];
-      if (g?.type) descParts.push(g.type);
-      if (g?.category) descParts.push(g.category);
-      if (g?.subject) descParts.push(g.subject);
-
-      const tileDesc =
-        descParts.length ? descParts.join(" • ") : "Step-by-step guide on iFixit.";
-
-      const img =
-        g?.image?.standard ||
-        g?.image?.large ||
-        g?.image?.medium ||
-        g?.image?.thumbnail ||
-        FALLBACK_IMG;
-
-      const url = g?.url || "https://www.ifixit.com/Guide";
-
-      return `
-        <article class="tile">
-      <div class="thumb">
-        <img
-          src="${esc(img)}"
-          alt="${esc(title)}"
-          loading="lazy"
-          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1581091215367-59ab6b1b3f1a?auto=format&fit=crop&w=1600&q=80';"
-        />
-        <div class="play" aria-hidden="true"></div>
-      </div>
-      <div class="tileBody">
-        <h3 class="tileTitle">${esc(title)}</h3>
-        <a class="tileLink" href="${esc(url)}" target="_blank" rel="noopener">
-          View guide →
-        </a>
-      </div>
-    </article>
-      `;
-    }
-
-    function setLoading() {
-      grid.innerHTML = `
-        <article class="tile">
-          <div class="tileBody">
-            <h3 class="tileTitle">Loading guides…</h3>
-            <p class="tileDesc">Fetching the latest 50 from iFixit.</p>
+        <!-- IN-FEED AD PLACEHOLDER (after guides load, stays placed here) -->
+        <div class="adBreak" aria-label="Advertisement">
+          <div class="adSlot adSlot--leaderboard" data-ad-placeholder="after-guides-banner">
+            <div>
+              <strong>Ad slot</strong>
+              728×90 / Responsive Banner<br/>
+              <span style="opacity:.9">Place: after iFixit grid</span>
+            </div>
           </div>
-        </article>
-      `;
-    }
 
-    function setError(msg) {
-      grid.innerHTML = `
-        <article class="tile">
-          <div class="tileBody">
-            <h3 class="tileTitle">Guides unavailable</h3>
-            <p class="tileDesc">${esc(msg)}</p>
-            <a class="tileLink" href="https://www.ifixit.com/Guide" target="_blank" rel="noopener">
-              Browse on iFixit →
-            </a>
-          </div>
-        </article>
-      `;
-    }
+          <!-- When ready:
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-XXXXXXXXXXXXXXX"
+               data-ad-slot="6789012345"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+          -->
+        </div>
 
-    async function load() {
-      setLoading();
+        <script>
+          (function () {
+            const grid = document.getElementById("ifixitGuidesGrid");
+            if (!grid) return;
 
-      const controller = new AbortController();
-      const t = setTimeout(() => controller.abort(), 12000);
+            const API_URL = "https://www.ifixit.com/api/2.0/guides?limit=50&order=DESC";
 
-      try {
-        const res = await fetch(API_URL, {
-          method: "GET",
-          headers: { Accept: "application/json" },
-          signal: controller.signal,
-        });
+            const FALLBACK_IMG =
+              "https://images.unsplash.com/photo-1581091215367-59ab6b1b3f1a?auto=format&fit=crop&w=1600&q=80";
 
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            function esc(s) {
+              return String(s ?? "")
+                .replaceAll("&", "&amp;")
+                .replaceAll("<", "&lt;")
+                .replaceAll(">", "&gt;")
+                .replaceAll('"', "&quot;")
+                .replaceAll("'", "&#039;");
+            }
 
-        const data = await res.json();
-        if (!Array.isArray(data) || !data.length) {
-          setError("No guides returned from the API.");
-          return;
-        }
+            function makeTile(g) {
+              const title = g?.title || "Untitled guide";
 
-        grid.innerHTML = data.map(makeTile).join("");
-      } catch (e) {
-        setError(
-          e && e.name === "AbortError"
-            ? "Request timed out. Try again or cache server-side."
-            : `Could not load from iFixit (${esc(e.message || e)}).`
-        );
-      } finally {
-        clearTimeout(t);
-      }
-    }
+              const descParts = [];
+              if (g?.type) descParts.push(g.type);
+              if (g?.category) descParts.push(g.category);
+              if (g?.subject) descParts.push(g.subject);
 
-    load();
-  })();
-</script>
+              const img =
+                g?.image?.standard ||
+                g?.image?.large ||
+                g?.image?.medium ||
+                g?.image?.thumbnail ||
+                FALLBACK_IMG;
+
+              const url = g?.url || "https://www.ifixit.com/Guide";
+
+              return `
+                <article class="tile">
+                  <div class="thumb">
+                    <img
+                      src="${esc(img)}"
+                      alt="${esc(title)}"
+                      loading="lazy"
+                      onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1581091215367-59ab6b1b3f1a?auto=format&fit=crop&w=1600&q=80';"
+                    />
+                    <div class="play" aria-hidden="true"></div>
+                  </div>
+                  <div class="tileBody">
+                    <h3 class="tileTitle">${esc(title)}</h3>
+                    <a class="tileLink" href="${esc(url)}" target="_blank" rel="noopener">
+                      View guide →
+                    </a>
+                  </div>
+                </article>
+              `;
+            }
+
+            function setLoading() {
+              grid.innerHTML = `
+                <article class="tile">
+                  <div class="tileBody">
+                    <h3 class="tileTitle">Loading guides…</h3>
+                    <p class="tileDesc">Fetching the latest 50 from iFixit.</p>
+                  </div>
+                </article>
+              `;
+            }
+
+            function setError(msg) {
+              grid.innerHTML = `
+                <article class="tile">
+                  <div class="tileBody">
+                    <h3 class="tileTitle">Guides unavailable</h3>
+                    <p class="tileDesc">${esc(msg)}</p>
+                    <a class="tileLink" href="https://www.ifixit.com/Guide" target="_blank" rel="noopener">
+                      Browse on iFixit →
+                    </a>
+                  </div>
+                </article>
+              `;
+            }
+
+            async function load() {
+              setLoading();
+
+              const controller = new AbortController();
+              const t = setTimeout(() => controller.abort(), 12000);
+
+              try {
+                const res = await fetch(API_URL, {
+                  method: "GET",
+                  headers: { Accept: "application/json" },
+                  signal: controller.signal,
+                });
+
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+                const data = await res.json();
+                if (!Array.isArray(data) || !data.length) {
+                  setError("No guides returned from the API.");
+                  return;
+                }
+
+                grid.innerHTML = data.map(makeTile).join("");
+              } catch (e) {
+                setError(
+                  e && e.name === "AbortError"
+                    ? "Request timed out. Try again or cache server-side."
+                    : `Could not load from iFixit (${esc(e.message || e)}).`
+                );
+              } finally {
+                clearTimeout(t);
+              }
+            }
+
+            load();
+          })();
+        </script>
 
       </section>
     </section>
   </main>
+
+  <!-- FOOTER AD PLACEHOLDER (optional; some people skip footer ads) -->
+  <div class="page" style="padding-top:0;">
+    <div class="adBreak" aria-label="Advertisement">
+      <div class="adSlot adSlot--leaderboard" data-ad-placeholder="footer-banner">
+        <div>
+          <strong>Ad slot</strong>
+          728×90 / Responsive Banner<br/>
+          <span style="opacity:.9">Place: above footer</span>
+        </div>
+      </div>
+
+      <!-- When ready:
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXX"
+           data-ad-slot="7890123456"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      -->
+    </div>
+  </div>
 
   <footer>
     <div class="footWrap">
@@ -663,3 +856,4 @@
   </script>
 </body>
 </html>
+
