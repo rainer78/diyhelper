@@ -1,67 +1,359 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Is It Worth Fixing an Electric Scooter?</title>
-  <meta name="description" content="How to decide whether an electric scooter repair is worth the cost compared with buying a new one." />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Is It Worth Fixing an Electric Scooter?</title>
+  <meta name="description" content="A practical decision guide: when electric scooter repairs are worth it, when replacement is smarter, and what costs typically drive the answer." />
   <meta name="robots" content="index,follow" />
+
+  <!-- Optional: GA4 (replace G-XXXXXXXXXX) -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
+  </script>
+  -->
+
   <style>
-    body {
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      margin: 32px;
-      line-height: 1.6;
+    :root{
+      --bg:#070a10;
+      --panel:rgba(255,255,255,.06);
+      --panel2:rgba(255,255,255,.04);
+      --border:rgba(255,255,255,.12);
+      --text:#eef2ff;
+      --muted:#b7c0d8;
+      --accent:#7dd3fc;
+      --good:#86efac;
+      --warn:#fde68a;
+      --bad:#fca5a5;
+      --shadow: 0 20px 50px rgba(0,0,0,.45);
+      --radius:18px;
     }
-    h1 {
-      font-size: 28px;
-      margin-bottom: 16px;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: radial-gradient(1200px 700px at 30% 10%, rgba(125,211,252,.18), transparent 50%),
+                  radial-gradient(900px 700px at 70% 20%, rgba(167,139,250,.14), transparent 55%),
+                  var(--bg);
+      color:var(--text);
     }
-    section {
-      margin-bottom: 20px;
+    a{color:inherit}
+    .topbar{
+      max-width:1100px;
+      margin:0 auto;
+      padding:18px 18px 0;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
     }
-    ul {
-      margin: 0 0 16px 20px;
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      text-decoration:none;
+      font-weight:700;
+      letter-spacing:.2px;
+    }
+    .dot{
+      width:10px;height:10px;border-radius:999px;
+      background:var(--accent);
+      box-shadow:0 0 0 4px rgba(125,211,252,.18);
+    }
+    .nav{
+      display:flex;
+      gap:16px;
+      font-size:14px;
+      color:var(--muted);
+    }
+    .nav a{
+      text-decoration:none;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid transparent;
+    }
+    .nav a:hover{
+      border-color:rgba(255,255,255,.14);
+      color:var(--text);
+      background:rgba(255,255,255,.03);
+    }
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding:18px;
+    }
+    .hero{
+      background: linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px;
+    }
+    .chips{
+      display:flex; flex-wrap:wrap; gap:8px;
+      margin-bottom:12px;
+    }
+    .chip{
+      font-size:12px;
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,.12);
+      padding:5px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,.03);
+    }
+    h1{
+      margin:0 0 10px;
+      font-size:34px;
+      line-height:1.1;
+      letter-spacing:-.4px;
+    }
+    .lede{
+      margin:0;
+      color:var(--muted);
+      font-size:16px;
+      max-width:80ch;
+    }
+    .grid{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: 1.7fr .9fr;
+      gap:16px;
+    }
+    .card{
+      background:var(--panel2);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow: var(--shadow);
+      padding:18px;
+    }
+    .card h2{
+      margin:0 0 10px;
+      font-size:18px;
+    }
+    .card p{margin:0 0 10px; color:var(--muted)}
+    .rule{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding:12px;
+      border-radius:14px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.10);
+      margin:12px 0;
+    }
+    .badge{
+      font-size:12px;
+      font-weight:700;
+      border-radius:999px;
+      padding:6px 10px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.04);
+      white-space:nowrap;
+    }
+    .badge.good{color:var(--good)}
+    .badge.warn{color:var(--warn)}
+    .badge.bad{color:var(--bad)}
+    ul{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+    }
+    li{margin:6px 0}
+    table{
+      width:100%;
+      border-collapse:collapse;
+      overflow:hidden;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(0,0,0,.18);
+    }
+    th, td{
+      text-align:left;
+      padding:10px 12px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      vertical-align:top;
+      font-size:14px;
+    }
+    th{color:var(--text); font-weight:700; background:rgba(255,255,255,.04)}
+    td{color:var(--muted)}
+    .cta{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      margin-top:10px;
+    }
+    .btn{
+      text-decoration:none;
+      display:inline-flex;
+      justify-content:center;
+      align-items:center;
+      gap:8px;
+      padding:11px 12px;
+      border-radius:12px;
+      border:1px solid rgba(125,211,252,.45);
+      background:rgba(125,211,252,.12);
+      color:var(--text);
+      font-weight:700;
+      font-size:14px;
+    }
+    .btn:hover{background:rgba(125,211,252,.18)}
+    .btn.secondary{
+      border-color:rgba(255,255,255,.16);
+      background:rgba(255,255,255,.05);
+      font-weight:650;
+    }
+    .fine{
+      font-size:12px;
+      color:var(--muted);
+      margin-top:10px;
+    }
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+      h1{font-size:28px}
     }
   </style>
 </head>
+
 <body>
-  <h1>Is It Worth Fixing an Electric Scooter?</h1>
+  <header class="topbar">
+    <a class="brand" href="/">
+      <span class="dot" aria-hidden="true"></span>
+      <span>helper.diy</span>
+    </a>
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="/#">More guides</a>
+      <a href="https://fixpixie.com">Fix Pixie</a>
+    </nav>
+  </header>
 
-  <section>
-    <p>
-      As a general rule, repairing an electric scooter makes financial sense when the cost of repair
-      is significantly less than the cost of a replacement. Repairs that cost less than half the price
-      of a comparable new scooter are usually justified, while expensive components like batteries and
-      controllers often tip the scale toward replacement. :contentReference[oaicite:2]{index=2}
-    </p>
-  </section>
+  <main class="wrap">
+    <section class="hero">
+      <div class="chips">
+        <span class="chip">Decision guide</span>
+        <span class="chip">E-scooter</span>
+        <span class="chip">Repair vs replace</span>
+      </div>
 
-  <section>
-    <h2>When Repairing Typically Makes Sense</h2>
-    <ul>
-      <li>Flat tires, worn brake pads, or minor mechanical issues</li>
-      <li>Loose cables or simple electrical adjustments</li>
-      <li>Parts costing under a modest threshold of total value</li>
-    </ul>
-  </section>
+      <h1>Is It Worth Fixing an Electric Scooter?</h1>
+      <p class="lede">
+        Use this page to make a clean decision in under two minutes. No heroics. Just cost, risk, and what tends to fail next.
+      </p>
 
-  <section>
-    <h2>When Replacement Is Usually the Better Choice</h2>
-    <ul>
-      <li>Battery replacement on older models</li>
-      <li>Controller or wiring issues with multiple components</li>
-      <li>Frame cracks or structural damage</li>
-    </ul>
-    <p>
-      In online communities, owners often say the repair isn’t worth it when the cost approaches what
-      you’d pay for a new scooter. Especially for major electrical or battery work, replacement can
-      be more cost-effective. :contentReference[oaicite:3]{index=3}
-    </p>
-  </section>
+      <div class="rule">
+        <span class="badge warn">Rule of thumb</span>
+        <div>
+          <div style="font-weight:700;margin-bottom:4px;">Repair is usually worth it if the all-in repair cost is under ~50% of the price of a comparable replacement scooter.</div>
+          <div style="color:var(--muted);font-size:14px;">
+            The two cost drivers that most often flip the decision are the battery and controller.
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <p>
-    Want a detailed repair plan tailored to your situation?  
-    <a href="https://fixpixie.com">Try Fix Pixie</a> for a guided breakdown of parts, tools, and steps.
-  </p>
+    <section class="grid">
+      <article class="card">
+        <h2>Fast decision checklist</h2>
+        <p>Pick the first statement that matches your situation.</p>
+
+        <div class="rule">
+          <span class="badge good">Usually fix</span>
+          <div>
+            <div style="font-weight:700;margin-bottom:4px;">It is a tire, brake, throttle, display, charging port, or loose-connection issue.</div>
+            <ul>
+              <li>Parts are inexpensive and the fix is low-risk.</li>
+              <li>You can often DIY with basic tools.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="rule">
+          <span class="badge warn">Depends</span>
+          <div>
+            <div style="font-weight:700;margin-bottom:4px;">It might be battery or controller related, but you are not sure yet.</div>
+            <ul>
+              <li>Do a quick diagnosis before spending money on parts.</li>
+              <li>If you have to replace multiple electrical components, costs stack fast.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="rule">
+          <span class="badge bad">Often replace</span>
+          <div>
+            <div style="font-weight:700;margin-bottom:4px;">Battery replacement on an older scooter, controller + wiring issues, or frame damage.</div>
+            <ul>
+              <li>High parts cost + time + uncertainty.</li>
+              <li>Even after repair, another failure may be next.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 style="margin-top:18px;">Typical cost drivers</h2>
+        <p>These are ranges. Actual costs vary by model, availability, and whether you DIY or pay labor.</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Component / Problem</th>
+              <th>Why it matters</th>
+              <th>Decision impact</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tube / tire / brake</td>
+              <td>Common wear items, predictable repair.</td>
+              <td><span class="badge good">Fix</span></td>
+            </tr>
+            <tr>
+              <td>Charging port / charger</td>
+              <td>Can be simple, but sometimes masks battery/controller issues.</td>
+              <td><span class="badge warn">Depends</span></td>
+            </tr>
+            <tr>
+              <td>Controller / wiring</td>
+              <td>Electrical diagnosis is the time sink; multiple failures can overlap.</td>
+              <td><span class="badge warn">Depends</span></td>
+            </tr>
+            <tr>
+              <td>Battery</td>
+              <td>One of the most expensive parts; old cells mean reduced future reliability.</td>
+              <td><span class="badge bad">Often replace</span></td>
+            </tr>
+            <tr>
+              <td>Frame damage</td>
+              <td>Safety issue. Repairs are rarely cost-effective.</td>
+              <td><span class="badge bad">Replace</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="fine">
+          Safety note: if there is frame damage, overheating, burning smell, or battery swelling, do not ride it. Diagnose before charging again.
+        </p>
+      </article>
+
+      <aside class="card">
+        <h2>Pick your next step</h2>
+        <p>Choose the action that matches where you are right now.</p>
+
+        <div class="cta">
+          <a class="btn" href="https://fixpixie.com">Get a step-by-step fix plan (Fix Pixie)</a>
+          <a class="btn secondary" href="/p/hover-1-repair-cost/">See real repair cost ranges (Hover-1)</a>
+          <a class="btn secondary" href="/">Back to helper.diy home</a>
+        </div>
+
+        <p class="fine">
+          If you want this page to look exactly like your Hover-1 page, you can also copy that file and simply swap the content.
+          The key is: same CSS, same structure.
+        </p>
+      </aside>
+    </section>
+  </main>
 </body>
 </html>
