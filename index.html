@@ -515,127 +515,129 @@
 
         </div>
 
-                       <!-- GUIDES -->
-        <h2 class="sectionTitle" id="guides" style="margin-top:28px;">DIY Repair Guides</h2>
+        <!-- GUIDES (iFixit-powered) -->
+<h2 class="sectionTitle" id="guides" style="margin-top:28px;">DIY Repair Guides</h2>
 
-        <!-- Row 1 -->
-        <div class="grid3">
+<!-- This grid will be filled by the script -->
+<div id="ifixitGuidesGrid" class="grid3"></div>
 
-          <article class="tile">
-            <div class="thumb">
-              <img
-                src="https://images.unsplash.com/photo-1581091215367-59ab6b1b3f1a?auto=format&fit=crop&w=1600&q=80"
-                alt="Hands repairing small electronics"
-                loading="lazy"
-              />
-              <div class="play" aria-hidden="true"></div>
-            </div>
-            <div class="tileBody">
-              <h3 class="tileTitle">Electric Scooter Battery Replacement</h3>
-              <p class="tileDesc">Step-by-step replacement with tools, safety notes, and fit checks.</p>
-              <a class="tileLink" href="https://www.ifixit.com/Guide" target="_blank" rel="noopener">
-                View guide →
-              </a>
-            </div>
-          </article>
+<script>
+  (function () {
+    const grid = document.getElementById("ifixitGuidesGrid");
+    if (!grid) return;
 
-          <article class="tile">
-            <div class="thumb">
-              <img
-                src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&w=1600&q=80"
-                alt="Tire and wheel repair workspace"
-                loading="lazy"
-              />
-              <div class="play" aria-hidden="true"></div>
-            </div>
-            <div class="tileBody">
-              <h3 class="tileTitle">Fixing a Flat Tire</h3>
-              <p class="tileDesc">Repair vs replace, tools required, and mistakes to avoid.</p>
-              <a class="tileLink" href="https://www.familyhandyman.com" target="_blank" rel="noopener">
-                View guide →
-              </a>
-            </div>
-          </article>
+    const API_URL = "https://www.ifixit.com/api/2.0/guides?limit=50&order=DESC";
 
-          <article class="tile">
-            <div class="thumb">
-              <img
-                src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1600&q=80"
-                alt="Electronics troubleshooting setup"
-                loading="lazy"
-              />
-              <div class="play" aria-hidden="true"></div>
-            </div>
-            <div class="tileBody">
-              <h3 class="tileTitle">Device Won’t Power On</h3>
-              <p class="tileDesc">A diagnostic order to isolate charger, battery, or controller.</p>
-              <a class="tileLink" href="https://makezine.com" target="_blank" rel="noopener">
-                View guide →
-              </a>
-            </div>
-          </article>
+    const FALLBACK_IMG =
+      "https://images.unsplash.com/photo-1581091215367-59ab6b1b3f1a?auto=format&fit=crop&w=1600&q=80";
 
-        </div>
+    function esc(s) {
+      return String(s ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
 
-        <!-- Row 2 -->
-        <div class="grid3" style="margin-top:28px;">
+    function makeTile(g) {
+      const title = g?.title || "Untitled guide";
 
-          <article class="tile">
-            <div class="thumb">
-              <img
-                src="https://images.unsplash.com/photo-1581091012184-5c1d7ad0b2fb?auto=format&fit=crop&w=1600&q=80"
-                alt="Battery diagnostics workspace"
-                loading="lazy"
-              />
-              <div class="play" aria-hidden="true"></div>
-            </div>
-            <div class="tileBody">
-              <h3 class="tileTitle">Battery Not Charging</h3>
-              <p class="tileDesc">Check order that prevents buying the wrong replacement.</p>
-              <a class="tileLink" href="https://www.ifixit.com" target="_blank" rel="noopener">
-                View guide →
-              </a>
-            </div>
-          </article>
+      const descParts = [];
+      if (g?.type) descParts.push(g.type);
+      if (g?.category) descParts.push(g.category);
+      if (g?.subject) descParts.push(g.subject);
 
-          <article class="tile">
-            <div class="thumb">
-              <img
-                src="https://images.unsplash.com/photo-1581579185169-20b3a8c45b5b?auto=format&fit=crop&w=1600&q=80"
-                alt="Garage workspace with tools"
-                loading="lazy"
-              />
-              <div class="play" aria-hidden="true"></div>
-            </div>
-            <div class="tileBody">
-              <h3 class="tileTitle">Basic Electrical Troubleshooting</h3>
-              <p class="tileDesc">Continuity, voltage checks, and common failure points.</p>
-              <a class="tileLink" href="https://www.popularmechanics.com/home" target="_blank" rel="noopener">
-                View guide →
-              </a>
-            </div>
-          </article>
+      const tileDesc =
+        descParts.length ? descParts.join(" • ") : "Step-by-step guide on iFixit.";
 
-          <article class="tile">
-            <div class="thumb">
-              <img
-                src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&w=1600&q=80"
-                alt="Wheel and brake repair"
-                loading="lazy"
-              />
-              <div class="play" aria-hidden="true"></div>
-            </div>
-            <div class="tileBody">
-              <h3 class="tileTitle">Brake Adjustment & Replacement</h3>
-              <p class="tileDesc">When adjustment is enough and when parts are required.</p>
-              <a class="tileLink" href="https://www.familyhandyman.com" target="_blank" rel="noopener">
-                View guide →
-              </a>
-            </div>
-          </article>
+      const img =
+        g?.image?.standard ||
+        g?.image?.large ||
+        g?.image?.medium ||
+        g?.image?.thumbnail ||
+        FALLBACK_IMG;
 
-        </div>
+      const url = g?.url || "https://www.ifixit.com/Guide";
 
+      return `
+        <article class="tile">
+          <div class="thumb">
+            <img src="${esc(img)}" alt="${esc(title)}" loading="lazy" />
+            <div class="play" aria-hidden="true"></div>
+          </div>
+          <div class="tileBody">
+            <h3 class="tileTitle">${esc(title)}</h3>
+            <p class="tileDesc">${esc(tileDesc)}</p>
+            <a class="tileLink" href="${esc(url)}" target="_blank" rel="noopener">
+              View guide →
+            </a>
+          </div>
+        </article>
+      `;
+    }
+
+    function setLoading() {
+      grid.innerHTML = `
+        <article class="tile">
+          <div class="tileBody">
+            <h3 class="tileTitle">Loading guides…</h3>
+            <p class="tileDesc">Fetching the latest 50 from iFixit.</p>
+          </div>
+        </article>
+      `;
+    }
+
+    function setError(msg) {
+      grid.innerHTML = `
+        <article class="tile">
+          <div class="tileBody">
+            <h3 class="tileTitle">Guides unavailable</h3>
+            <p class="tileDesc">${esc(msg)}</p>
+            <a class="tileLink" href="https://www.ifixit.com/Guide" target="_blank" rel="noopener">
+              Browse on iFixit →
+            </a>
+          </div>
+        </article>
+      `;
+    }
+
+    async function load() {
+      setLoading();
+
+      const controller = new AbortController();
+      const t = setTimeout(() => controller.abort(), 12000);
+
+      try {
+        const res = await fetch(API_URL, {
+          method: "GET",
+          headers: { Accept: "application/json" },
+          signal: controller.signal,
+        });
+
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+        const data = await res.json();
+        if (!Array.isArray(data) || !data.length) {
+          setError("No guides returned from the API.");
+          return;
+        }
+
+        grid.innerHTML = data.map(makeTile).join("");
+      } catch (e) {
+        setError(
+          e && e.name === "AbortError"
+            ? "Request timed out. Try again or cache server-side."
+            : `Could not load from iFixit (${esc(e.message || e)}).`
+        );
+      } finally {
+        clearTimeout(t);
+      }
+    }
+
+    load();
+  })();
+</script>
 
       </section>
     </section>
