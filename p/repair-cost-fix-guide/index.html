@@ -1,1 +1,465 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Repair Cost &amp; Fix Guide | Know What to Fix Before You Spend</title>
+  <meta name="description" content="Understand repair costs, likely fixes, and whether a repair is worth it. Use Fix Pixie to generate a repair cost and fix guide based on your situation before you spend time or money." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://helper.diy/p/repair-cost-fix-guide/" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Repair Cost &amp; Fix Guide" />
+  <meta property="og:description" content="Understand repair costs, likely fixes, and whether a repair is worth it. Generate a repair cost and fix guide based on your situation before you spend time or money." />
+  <meta property="og:url" content="https://helper.diy/p/repair-cost-fix-guide/" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- GA4 (optional): replace G-XXXXXXXXXX or delete this block -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
+  </script>
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --line:#e5e7eb;
+      --panel:#ffffff;
+      --soft:#f8fafc;
+      --accent:#9040D0; /* Fix Pixie purple */
+      --accent2:#111827;
+      --shadow: 0 10px 30px rgba(2,6,23,.08);
+      --radius: 12px;
+      --max: 980px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--text);
+      background:var(--bg);
+    }
+    a{color:inherit}
+
+    .topbar{
+      border-bottom:1px solid var(--line);
+      background:#fff;
+    }
+    .topbar__wrap{
+      max-width:1200px;
+      margin:0 auto;
+      padding:14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      text-decoration:none;
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+    .brand__dot{
+      width:10px;height:10px;border-radius:999px;
+      background:var(--accent);
+      box-shadow:0 0 0 4px rgba(144,64,208,.22);
+    }
+    .topnav{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      font-size:14px;
+      color:var(--muted);
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .topnav a{
+      text-decoration:none;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid transparent;
+    }
+    .topnav a:hover{
+      border-color:var(--line);
+      background:var(--soft);
+      color:var(--text);
+    }
+    .topnav .pill{
+      border:1px solid var(--line);
+      background:var(--soft);
+      color:var(--text);
+      font-weight:700;
+    }
+
+    main{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:26px 18px 44px;
+    }
+
+    .breadcrumbs{
+      font-size:13px;
+      color:var(--muted);
+      margin: 6px 0 14px;
+    }
+    .breadcrumbs a{ text-decoration:none; }
+    .breadcrumbs a:hover{ text-decoration:underline; text-underline-offset:3px; }
+
+    h1{
+      margin:0 0 10px;
+      font-size:40px;
+      font-weight:900;
+      letter-spacing:.3px;
+      text-transform:uppercase;
+      line-height:1.05;
+    }
+    .lede{
+      margin:0 0 18px;
+      color:var(--muted);
+      line-height:1.6;
+      font-size:16px;
+      max-width:75ch;
+    }
+
+    .heroCard{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:var(--panel);
+      box-shadow:var(--shadow);
+      padding:18px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:16px;
+      align-items:start;
+      margin: 18px 0 22px;
+    }
+    .heroCard h2{
+      margin:0 0 8px;
+      font-size:18px;
+      font-weight:900;
+      letter-spacing:.2px;
+      text-transform:uppercase;
+    }
+    .heroCard p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.6;
+      font-size:14px;
+    }
+
+    .btnRow{ display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 14px;
+      border-radius:10px;
+      border:1px solid rgba(144,64,208,.55);
+      background: var(--accent);
+      color:#fff;
+      text-decoration:none;
+      font-weight:800;
+      width: fit-content;
+    }
+    .btn:hover{
+      background:#7C2FC2;
+      border-color: rgba(124,47,194,.65);
+      filter:brightness(.96)
+    }
+    .btnGhost{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 14px;
+      border-radius:10px;
+      border:1px solid var(--line);
+      background: var(--soft);
+      color:var(--text);
+      text-decoration:none;
+      font-weight:800;
+    }
+    .btnGhost:hover{
+      filter:brightness(.98);
+      border-color:#d1d5db;
+    }
+
+    article{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:var(--panel);
+      box-shadow:var(--shadow);
+      padding:18px;
+    }
+
+    h2{
+      margin:18px 0 10px;
+      font-size:20px;
+      font-weight:900;
+      letter-spacing:.2px;
+      text-transform:uppercase;
+    }
+    h2:first-child{ margin-top:0; }
+
+    h3{
+      margin:14px 0 8px;
+      font-size:16px;
+      font-weight:900;
+      letter-spacing:.15px;
+      text-transform:uppercase;
+    }
+
+    p{
+      margin:0 0 12px;
+      color:var(--text);
+      line-height:1.75;
+      font-size:15px;
+    }
+    p.muted{ color:var(--muted); }
+
+    ul{
+      margin:8px 0 14px 18px;
+      color:var(--text);
+      line-height:1.7;
+      font-size:15px;
+    }
+    li{ margin:6px 0; }
+    strong{ font-weight:900; }
+
+    .callout{
+      margin:16px 0;
+      padding:14px 14px;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:var(--soft);
+    }
+    .callout p{ margin:0; color:var(--muted); }
+
+    .divider{
+      height:1px;
+      background:var(--line);
+      margin:18px 0;
+    }
+
+    footer{
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:13px;
+      padding:18px 0;
+      margin-top:28px;
+    }
+    .footWrap{
+      max-width:1200px;
+      margin:0 auto;
+      padding:0 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    @media (max-width: 860px){
+      h1{ font-size:32px; }
+      .heroCard{ grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Repair Cost & Fix Guide",
+    "description": "Understand repair costs, likely fixes, and whether a repair is worth it. Use Fix Pixie to generate a repair cost and fix guide based on your situation before you spend time or money.",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://helper.diy/p/repair-cost-fix-guide/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "helper.diy"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="topbar__wrap">
+      <a class="brand" href="/">
+        <span class="brand__dot" aria-hidden="true"></span>
+        <span>helper.diy</span>
+      </a>
+
+      <nav class="topnav" aria-label="Primary navigation">
+        <a class="pill" href="/">Home</a>
+        <a href="/p/how-much-does-it-cost-to-fix-an-electric-scooter/">E-Scooter Costs</a>
+        <a href="/p/is-it-worth-fixing-electric-scooter/">Repair vs Replace</a>
+        <a class="fixpixieLink" href="https://fixpixie.com">Fix Pixie</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumbs">
+      <a href="/">Home</a> <span aria-hidden="true">›</span> <span>Repair Cost &amp; Fix Guide</span>
+    </div>
+
+    <h1>Repair Cost &amp; Fix Guide</h1>
+    <p class="lede">
+      Knowing how much a repair will cost is only part of the problem. The harder part is knowing what actually needs to be fixed,
+      and whether it is worth fixing at all. This page explains what affects repair cost and how to get a clear next step for your situation
+      before you spend time or money.
+    </p>
+
+    <section class="heroCard" aria-label="Quick start">
+      <div>
+        <h2>Get a guide based on your situation</h2>
+        <p>
+          Fix Pixie uses image recognition to identify the issue from a photo, then generates a practical repair guide with realistic cost ranges,
+          the checks that matter, and a clear next step. You do not need to diagnose the problem first.
+        </p>
+
+        <div class="btnRow">
+          <a class="btn fixpixieLink" href="https://fixpixie.com">Start with a photo in Fix Pixie</a>
+          <a class="btnGhost" href="/p/is-it-worth-fixing-electric-scooter/">Repair vs replace guide</a>
+        </div>
+      </div>
+
+      <div class="callout">
+        <p>
+          If you prefer to start with a cost example, see:
+          <strong><a href="/p/how-much-does-it-cost-to-fix-an-electric-scooter/" style="text-decoration:none;">electric scooter repair costs</a></strong>.
+        </p>
+      </div>
+    </section>
+
+    <article>
+      <h2>Why repair costs are hard to estimate</h2>
+      <p>
+        Most repair cost estimates assume the problem has already been diagnosed. In real life, people are dealing with symptoms and uncertainty.
+        The same symptom can point to a minor fix or a major replacement. That is why cost ranges are only useful when they are tied to the likely cause.
+      </p>
+
+      <h2>What affects repair cost the most</h2>
+
+      <h3>The underlying issue</h3>
+      <p class="muted">
+        A visible symptom does not always reflect the real cause. The correct fix depends on what is actually failing, not only what you are seeing.
+      </p>
+
+      <h3>Parts versus labor</h3>
+      <p class="muted">
+        Some repairs are inexpensive in parts but costly in time. Others are the opposite. Knowing which applies prevents surprises.
+      </p>
+
+      <h3>Accessibility and disassembly</h3>
+      <p class="muted">
+        If a repair requires extensive disassembly, the time and risk increase quickly, even when parts are inexpensive.
+      </p>
+
+      <h3>Safety considerations</h3>
+      <p class="muted">
+        Electrical, mechanical, or structural risks can change a do-it-yourself repair into a professional job.
+      </p>
+
+      <div class="divider" role="separator" aria-hidden="true"></div>
+
+      <h2>Why diagnosis matters before cost</h2>
+      <p>
+        Trying to estimate repair cost without diagnosis often leads to replacing parts that were not the problem, or abandoning a repair that was simpler than expected.
+        This is where many DIY projects stall. The fastest way forward is to identify the likely issue and check the simplest causes first.
+      </p>
+
+      <h2>How Fix Pixie creates a repair cost and fix guide</h2>
+      <p>
+        Fix Pixie reduces the cognitive load of getting started by beginning with an image of the problem. Instead of asking you to diagnose the issue,
+        it uses the photo to identify what matters and generate a structured guide.
+      </p>
+
+      <h3>Step 1: Upload a photo</h3>
+      <p class="muted">
+        A photo provides immediate context. You do not need part names, model numbers, or technical language.
+      </p>
+
+      <h3>Step 2: Issue identification</h3>
+      <p class="muted">
+        Using image recognition, Fix Pixie identifies visible components, common failure points, and what can be ruled out early.
+      </p>
+
+      <h3>Step 3: Situation-specific guidance</h3>
+      <p class="muted">
+        The guide is tailored to what is visible and a small amount of context. It includes likely causes, practical checks in order, typical cost ranges,
+        factors that raise or lower the cost, and safety or replacement considerations.
+      </p>
+
+      <h2>Repair or replace: making the decision early</h2>
+      <p>
+        A good repair guide helps you decide before you commit. Fix Pixie structures guidance to answer one key question early:
+        <strong>Is this worth fixing?</strong> The goal is to help you proceed, hand it off, or stop and replace instead.
+      </p>
+
+      <h2>When this approach is most useful</h2>
+      <ul>
+        <li>You are unsure what is wrong and do not want to guess.</li>
+        <li>You want cost clarity before buying parts or tools.</li>
+        <li>You want to avoid trial and error and unnecessary replacements.</li>
+        <li>You need a clear next step, not a long list of possibilities.</li>
+      </ul>
+
+      <h2>Get your repair cost and fix guide</h2>
+      <p>
+        If you want to understand your repair before committing time or money, start with Fix Pixie. Upload a photo, review the guidance, and decide on the next step.
+      </p>
+      <div class="btnRow">
+        <a class="btn fixpixieLink" href="https://fixpixie.com">Start with a photo in Fix Pixie</a>
+        <a class="btnGhost" href="/p/how-much-does-it-cost-to-fix-an-electric-scooter/">See a cost example</a>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footWrap">
+      <div>© <span id="y"></span> helper.diy</div>
+      <div>
+        <a class="fixpixieLink" href="https://fixpixie.com" style="text-decoration:none;">Try Fix Pixie</a>
+        <span style="margin:0 10px;color:var(--line);">|</span>
+        <a href="/" style="text-decoration:none;">Home</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Track Fix Pixie outbound clicks -->
+  <script>
+    document.addEventListener("click", function (e) {
+      const a = e.target.closest("a.fixpixieLink");
+      if (!a) return;
+
+      if (window.gtag) {
+        gtag("event", "click", {
+          event_category: "outbound",
+          event_label: "fixpixie",
+          transport_type: "beacon"
+        });
+      }
+    });
+  </script>
+</body>
+</html>
 
