@@ -3,12 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Is It Worth Fixing an Electric Scooter?</title>
-  <meta name="description" content="A practical decision guide: when electric scooter repairs are worth it, when replacement is smarter, and what costs typically drive the answer." />
+
+  <title>Is It Worth Fixing an Electric Scooter? | Repair vs Replace Guide | helper.diy</title>
+  <meta name="description" content="A practical decision guide: when electric scooter repairs are worth it, when replacement is smarter, and the costs that typically drive the answer." />
   <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://helper.diy/p/is-it-worth-fixing-electric-scooter/" />
 
   <!-- Optional: GA4 (replace G-XXXXXXXXXX) -->
-  <!--
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -16,344 +17,531 @@
     gtag('js', new Date());
     gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
   </script>
-  -->
+
+  <!-- JSON-LD (simple, safe default) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"Is It Worth Fixing an Electric Scooter?",
+    "description":"A practical decision guide: when electric scooter repairs are worth it, when replacement is smarter, and the costs that typically drive the answer.",
+    "publisher":{"@type":"Organization","name":"helper.diy"},
+    "mainEntityOfPage":{"@type":"WebPage","@id":"https://helper.diy/p/is-it-worth-fixing-electric-scooter/"}
+  }
+  </script>
 
   <style>
     :root{
-      --bg:#070a10;
-      --panel:rgba(255,255,255,.06);
-      --panel2:rgba(255,255,255,.04);
-      --border:rgba(255,255,255,.12);
-      --text:#eef2ff;
-      --muted:#b7c0d8;
-      --accent:#7dd3fc;
-      --good:#86efac;
-      --warn:#fde68a;
-      --bad:#fca5a5;
-      --shadow: 0 20px 50px rgba(0,0,0,.45);
-      --radius:18px;
+      --bg:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --line:#e5e7eb;
+      --panel:#ffffff;
+      --soft:#f8fafc;
+      --accent:#9040D0; /* Fix Pixie purple */
+      --accent2:#111827;
+      --shadow: 0 10px 30px rgba(2,6,23,.08);
+      --radius: 12px;
+      --max: 1200px;
+      --sidebar: 260px;
     }
+
     *{box-sizing:border-box}
     body{
       margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background: radial-gradient(1200px 700px at 30% 10%, rgba(125,211,252,.18), transparent 50%),
-                  radial-gradient(900px 700px at 70% 20%, rgba(167,139,250,.14), transparent 55%),
-                  var(--bg);
       color:var(--text);
+      background:var(--bg);
     }
     a{color:inherit}
+
     .topbar{
-      max-width:1100px;
+      border-bottom:1px solid var(--line);
+      background:#fff;
+    }
+    .topbar__wrap{
+      max-width:var(--max);
       margin:0 auto;
-      padding:18px 18px 0;
+      padding:14px 18px;
       display:flex;
       align-items:center;
       justify-content:space-between;
+      gap:12px;
     }
     .brand{
       display:flex;
       align-items:center;
       gap:10px;
       text-decoration:none;
-      font-weight:700;
+      font-weight:800;
       letter-spacing:.2px;
     }
-    .dot{
+    .brand__dot{
       width:10px;height:10px;border-radius:999px;
       background:var(--accent);
-      box-shadow:0 0 0 4px rgba(125,211,252,.18);
+      box-shadow:0 0 0 4px rgba(144,64,208,.22);
     }
-    .nav{
+    .topnav{
       display:flex;
-      gap:16px;
+      gap:10px;
+      align-items:center;
       font-size:14px;
       color:var(--muted);
+      flex-wrap:wrap;
+      justify-content:flex-end;
     }
-    .nav a{
+    .topnav a{
       text-decoration:none;
       padding:8px 10px;
       border-radius:999px;
       border:1px solid transparent;
     }
-    .nav a:hover{
-      border-color:rgba(255,255,255,.14);
+    .topnav a:hover{
+      border-color:var(--line);
+      background:var(--soft);
       color:var(--text);
-      background:rgba(255,255,255,.03);
     }
-    .wrap{
-      max-width:1100px;
+    .topnav .pill{
+      border:1px solid var(--line);
+      background:var(--soft);
+      color:var(--text);
+      font-weight:700;
+    }
+
+    .page{
+      max-width:var(--max);
       margin:0 auto;
       padding:18px;
     }
-    .hero{
-      background: linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:22px;
-    }
-    .chips{
-      display:flex; flex-wrap:wrap; gap:8px;
-      margin-bottom:12px;
-    }
-    .chip{
-      font-size:12px;
-      color:var(--muted);
-      border:1px solid rgba(255,255,255,.12);
-      padding:5px 10px;
-      border-radius:999px;
-      background:rgba(255,255,255,.03);
-    }
-    h1{
-      margin:0 0 10px;
-      font-size:34px;
-      line-height:1.1;
-      letter-spacing:-.4px;
-    }
-    .lede{
-      margin:0;
-      color:var(--muted);
-      font-size:16px;
-      max-width:80ch;
-    }
-    .grid{
-      margin-top:18px;
+
+    .layout{
       display:grid;
-      grid-template-columns: 1.7fr .9fr;
-      gap:16px;
+      grid-template-columns: var(--sidebar) 1fr;
+      gap:18px;
+      align-items:start;
     }
-    .card{
-      background:var(--panel2);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      box-shadow: var(--shadow);
-      padding:18px;
+
+    /* Sidebar */
+    .sidebar{
+      position:sticky;
+      top:18px;
+      border-right:1px solid var(--line);
+      padding-right:14px;
+      min-height: 300px;
     }
-    .card h2{
-      margin:0 0 10px;
-      font-size:18px;
-    }
-    .card p{margin:0 0 10px; color:var(--muted)}
-    .rule{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-      padding:12px;
-      border-radius:14px;
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.10);
-      margin:12px 0;
-    }
-    .badge{
-      font-size:12px;
-      font-weight:700;
-      border-radius:999px;
-      padding:6px 10px;
-      border:1px solid rgba(255,255,255,.14);
-      background:rgba(255,255,255,.04);
-      white-space:nowrap;
-    }
-    .badge.good{color:var(--good)}
-    .badge.warn{color:var(--warn)}
-    .badge.bad{color:var(--bad)}
-    ul{
+    .sideList{
+      list-style:none;
+      padding:0;
       margin:0;
-      padding-left:18px;
-      color:var(--muted);
-    }
-    li{margin:6px 0}
-    table{
-      width:100%;
-      border-collapse:collapse;
-      overflow:hidden;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(0,0,0,.18);
-    }
-    th, td{
-      text-align:left;
-      padding:10px 12px;
-      border-bottom:1px solid rgba(255,255,255,.08);
-      vertical-align:top;
-      font-size:14px;
-    }
-    th{color:var(--text); font-weight:700; background:rgba(255,255,255,.04)}
-    td{color:var(--muted)}
-    .cta{
       display:flex;
       flex-direction:column;
       gap:10px;
-      margin-top:10px;
-    }
-    .btn{
-      text-decoration:none;
-      display:inline-flex;
-      justify-content:center;
-      align-items:center;
-      gap:8px;
-      padding:11px 12px;
-      border-radius:12px;
-      border:1px solid rgba(125,211,252,.45);
-      background:rgba(125,211,252,.12);
-      color:var(--text);
-      font-weight:700;
       font-size:14px;
     }
-    .btn:hover{background:rgba(125,211,252,.18)}
-    .btn.secondary{
-      border-color:rgba(255,255,255,.16);
-      background:rgba(255,255,255,.05);
-      font-weight:650;
+    .sideList a{
+      text-decoration:none;
+      color:var(--muted);
+      line-height:1.25;
     }
-    .fine{
+    .sideList a:hover{
+      color:var(--text);
+      text-decoration:underline;
+      text-underline-offset:3px;
+    }
+
+    /* Hero row */
+    .heroRow{
+      display:grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .heroCard{
+      border:1px solid var(--line);
+      background:var(--panel);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow: var(--shadow);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      min-height: 260px;
+    }
+    .heroEyebrow{
       font-size:12px;
       color:var(--muted);
-      margin-top:10px;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      margin:0 0 10px;
     }
-    @media (max-width: 900px){
-      .grid{grid-template-columns:1fr}
-      h1{font-size:28px}
+    .heroTitle{
+      margin:0 0 10px;
+      font-size:34px;
+      font-weight:900;
+      letter-spacing:.4px;
+      text-transform:uppercase;
+    }
+    .heroSub{
+      margin:0 0 16px;
+      color:var(--muted);
+      max-width: 62ch;
+      line-height:1.55;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 14px;
+      border-radius:10px;
+      border:1px solid rgba(144,64,208,.55);
+      background: var(--accent);
+      color:#fff;
+      text-decoration:none;
+      font-weight:800;
+      width: fit-content;
+    }
+    .btn:hover{
+      background:#7C2FC2;
+      border-color: rgba(124,47,194,.65);
+      filter:brightness(.96)
+    }
+    .btnGhost{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 14px;
+      border-radius:10px;
+      border:1px solid var(--line);
+      background: var(--soft);
+      color:var(--text);
+      text-decoration:none;
+      font-weight:800;
+      width: fit-content;
+    }
+    .btnGhost:hover{ filter:brightness(.98); }
+
+    .heroMedia{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      background:#ddd;
+      min-height:260px;
+    }
+    .heroMedia img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .sectionTitle{
+      margin:26px 0 12px;
+      font-size:34px;
+      font-weight:900;
+      letter-spacing:.4px;
+      text-transform:uppercase;
+    }
+
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:18px;
+    }
+    .tile{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      overflow:hidden;
+      background:var(--panel);
+      box-shadow: var(--shadow);
+    }
+    .tileBody{
+      padding:14px 14px 16px;
+    }
+    .tileTitle{
+      margin:0 0 8px;
+      font-size:20px;
+      font-weight:900;
+      letter-spacing:.2px;
+    }
+    .tileDesc{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.55;
+      min-height: 48px;
+    }
+    .tileLink{
+      margin-top:12px;
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      text-decoration:none;
+      font-weight:800;
+      color:var(--accent2);
+      font-size:14px;
+    }
+    .tileLink:hover{text-decoration:underline; text-underline-offset:3px;}
+
+    .note{
+      border:1px solid var(--line);
+      background:var(--soft);
+      border-radius:var(--radius);
+      padding:14px;
+      color:var(--muted);
+      line-height:1.6;
+      box-shadow: var(--shadow);
+    }
+
+    .tableWrap{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      overflow:auto;
+      box-shadow: var(--shadow);
+      background:#fff;
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      min-width: 720px;
+      font-size:14px;
+    }
+    th,td{
+      padding:12px;
+      border-bottom:1px solid var(--line);
+      text-align:left;
+      vertical-align:top;
+    }
+    th{
+      background:var(--soft);
+      color:var(--text);
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      font-size:11px;
+    }
+    td{ color:var(--muted); }
+
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      padding:3px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:var(--soft);
+      color:var(--text);
+      font-size:12px;
+      font-weight:900;
+      white-space:nowrap;
+    }
+    .tag.good{ border-color: rgba(16,185,129,.25); background: rgba(16,185,129,.10); }
+    .tag.warn{ border-color: rgba(245,158,11,.25); background: rgba(245,158,11,.10); }
+    .tag.bad{ border-color: rgba(239,68,68,.25); background: rgba(239,68,68,.10); }
+
+    footer{
+      margin-top:34px;
+      border-top:1px solid var(--line);
+      padding:18px 0;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .footWrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:0 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    @media (max-width: 980px){
+      .layout{grid-template-columns: 1fr;}
+      .sidebar{
+        position:static;
+        border-right:none;
+        padding-right:0;
+        border-bottom:1px solid var(--line);
+        padding-bottom:14px;
+      }
+      .heroRow{grid-template-columns: 1fr;}
+      .grid3{grid-template-columns: 1fr;}
+      .sectionTitle{font-size:28px}
+      .heroTitle{font-size:28px}
+      table{ min-width: 640px; }
     }
   </style>
 </head>
 
 <body>
   <header class="topbar">
-    <a class="brand" href="/">
-      <span class="dot" aria-hidden="true"></span>
-      <span>helper.diy</span>
-    </a>
-    <nav class="nav">
-      <a href="/">Home</a>
-      <a href="/#">More guides</a>
-      <a href="https://fixpixie.com">Fix Pixie</a>
-    </nav>
+    <div class="topbar__wrap">
+      <a class="brand" href="/">
+        <span class="brand__dot" aria-hidden="true"></span>
+        <span>helper.diy</span>
+      </a>
+
+      <nav class="topnav" aria-label="Primary navigation">
+        <a class="pill" href="/#trending">Trending</a>
+        <a href="/p/how-much-does-it-cost-to-fix-an-electric-scooter/">E-Scooter Costs</a>
+        <a class="pill" href="/p/is-it-worth-fixing-electric-scooter/">Repair vs Replace</a>
+        <a class="fixpixieLink" href="https://fixpixie.com">Fix Pixie</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="wrap">
-    <section class="hero">
-      <div class="chips">
-        <span class="chip">Decision guide</span>
-        <span class="chip">E-scooter</span>
-        <span class="chip">Repair vs replace</span>
-      </div>
-
-      <h1>Is It Worth Fixing an Electric Scooter?</h1>
-      <p class="lede">
-        Use this page to make a clean decision in under two minutes. No heroics. Just cost, risk, and what tends to fail next.
-      </p>
-
-      <div class="rule">
-        <span class="badge warn">Rule of thumb</span>
-        <div>
-          <div style="font-weight:700;margin-bottom:4px;">Repair is usually worth it if the all-in repair cost is under ~50% of the price of a comparable replacement scooter.</div>
-          <div style="color:var(--muted);font-size:14px;">
-            The two cost drivers that most often flip the decision are the battery and controller.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="grid">
-      <article class="card">
-        <h2>Fast decision checklist</h2>
-        <p>Pick the first statement that matches your situation.</p>
-
-        <div class="rule">
-          <span class="badge good">Usually fix</span>
-          <div>
-            <div style="font-weight:700;margin-bottom:4px;">It is a tire, brake, throttle, display, charging port, or loose-connection issue.</div>
-            <ul>
-              <li>Parts are inexpensive and the fix is low-risk.</li>
-              <li>You can often DIY with basic tools.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="rule">
-          <span class="badge warn">Depends</span>
-          <div>
-            <div style="font-weight:700;margin-bottom:4px;">It might be battery or controller related, but you are not sure yet.</div>
-            <ul>
-              <li>Do a quick diagnosis before spending money on parts.</li>
-              <li>If you have to replace multiple electrical components, costs stack fast.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="rule">
-          <span class="badge bad">Often replace</span>
-          <div>
-            <div style="font-weight:700;margin-bottom:4px;">Battery replacement on an older scooter, controller + wiring issues, or frame damage.</div>
-            <ul>
-              <li>High parts cost + time + uncertainty.</li>
-              <li>Even after repair, another failure may be next.</li>
-            </ul>
-          </div>
-        </div>
-
-        <h2 style="margin-top:18px;">Typical cost drivers</h2>
-        <p>These are ranges. Actual costs vary by model, availability, and whether you DIY or pay labor.</p>
-
-        <table>
-          <thead>
-            <tr>
-              <th>Component / Problem</th>
-              <th>Why it matters</th>
-              <th>Decision impact</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Tube / tire / brake</td>
-              <td>Common wear items, predictable repair.</td>
-              <td><span class="badge good">Fix</span></td>
-            </tr>
-            <tr>
-              <td>Charging port / charger</td>
-              <td>Can be simple, but sometimes masks battery/controller issues.</td>
-              <td><span class="badge warn">Depends</span></td>
-            </tr>
-            <tr>
-              <td>Controller / wiring</td>
-              <td>Electrical diagnosis is the time sink; multiple failures can overlap.</td>
-              <td><span class="badge warn">Depends</span></td>
-            </tr>
-            <tr>
-              <td>Battery</td>
-              <td>One of the most expensive parts; old cells mean reduced future reliability.</td>
-              <td><span class="badge bad">Often replace</span></td>
-            </tr>
-            <tr>
-              <td>Frame damage</td>
-              <td>Safety issue. Repairs are rarely cost-effective.</td>
-              <td><span class="badge bad">Replace</span></td>
-            </tr>
-          </tbody>
-        </table>
-
-        <p class="fine">
-          Safety note: if there is frame damage, overheating, burning smell, or battery swelling, do not ride it. Diagnose before charging again.
-        </p>
-      </article>
-
-      <aside class="card">
-        <h2>Pick your next step</h2>
-        <p>Choose the action that matches where you are right now.</p>
-
-        <div class="cta">
-          <a class="btn" href="https://fixpixie.com">Get a step-by-step fix plan (Fix Pixie)</a>
-          <a class="btn secondary" href="/p/hover-1-repair-cost/">See real repair cost ranges (Hover-1)</a>
-          <a class="btn secondary" href="/">Back to helper.diy home</a>
-        </div>
-
-        <p class="fine">
-          If you want this page to look exactly like your Hover-1 page, you can also copy that file and simply swap the content.
-          The key is: same CSS, same structure.
-        </p>
+  <main class="page">
+    <section class="layout">
+      <!-- LEFT NAV -->
+      <aside class="sidebar" aria-label="Related scooter pages">
+        <ul class="sideList">
+          <li><a href="/p/repair-cost-fix-guide/">Repair Cost &amp; Fix Guide</a></li>
+          <li><a href="/p/how-much-does-it-cost-to-fix-an-electric-scooter/">Electric scooter repair costs</a></li>
+          <li><a href="/p/hover-1-repair-cost/">Hover-1 repair cost</a></li>
+          <li style="margin-top:10px;"><a href="/p/electric-scooter-wont-charge/">Scooter won’t charge</a></li>
+          <li><a href="/p/electric-scooter-wont-turn-on/">Scooter won’t turn on</a></li>
+          <li><a href="/p/electric-scooter-flat-tire-fix-cost/">Flat tire cost</a></li>
+          <li><a href="/p/electric-scooter-battery-replacement-cost/">Battery replacement cost</a></li>
+        </ul>
       </aside>
+
+      <!-- MAIN -->
+      <section>
+        <!-- HERO -->
+        <div class="heroRow">
+          <div class="heroCard">
+            <p class="heroEyebrow">Decision guide</p>
+            <h1 class="heroTitle">Is it worth fixing an electric scooter?</h1>
+            <p class="heroSub">
+              You can make a clean decision in under two minutes by focusing on cost, risk, and what tends to fail next.
+              The simple rule is: repairs are usually worth it when the all-in cost stays under about half the price of a comparable replacement.
+            </p>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn" href="https://fixpixie.com/?utm_source=helperdiy&utm_medium=referral&utm_campaign=repair_vs_replace&utm_content=primary">
+                Get a fix plan in Fix Pixie
+              </a>
+              <a class="btnGhost" href="/p/how-much-does-it-cost-to-fix-an-electric-scooter/">
+                See cost ranges
+              </a>
+            </div>
+          </div>
+
+          <div class="heroMedia" aria-label="Hero image">
+            <img
+              src="https://github.com/rainer78/diyhelper/blob/main/img/helper-diy-hero.png?raw=true"
+              alt="Scooter repair decision guide workspace with tools and parts"
+              loading="eager"
+            />
+          </div>
+        </div>
+
+        <!-- Standard cross-link block -->
+        <div class="note" style="margin-top:18px;">
+          Not sure what actually needs fixing or how much it will cost?
+          Start with the <a href="/p/repair-cost-fix-guide/" style="font-weight:800; text-decoration:none;">Repair Cost &amp; Fix Guide</a>
+          to see likely causes, realistic cost ranges, and the next step before you spend time or money.
+        </div>
+
+        <!-- 3 CHOICES (homepage strategy) -->
+        <h2 class="sectionTitle" style="margin-top:26px;">Fast decision checklist</h2>
+        <div class="grid3">
+          <article class="tile">
+            <div class="tileBody">
+              <h3 class="tileTitle">Usually fix</h3>
+              <p class="tileDesc">Tire, brake, throttle, display, charging port, or loose-connection issues tend to be predictable and low-risk.</p>
+              <a class="tileLink" href="/p/how-much-does-it-cost-to-fix-an-electric-scooter/">Check typical costs →</a>
+            </div>
+          </article>
+
+          <article class="tile">
+            <div class="tileBody">
+              <h3 class="tileTitle">Depends</h3>
+              <p class="tileDesc">If it might be battery or controller related, pause and diagnose before ordering parts. Costs stack fast when you guess.</p>
+              <a class="tileLink fixpixieLink" href="https://fixpixie.com/?utm_source=helperdiy&utm_medium=referral&utm_campaign=repair_vs_replace&utm_content=diagnose">
+                Diagnose with Fix Pixie →
+              </a>
+            </div>
+          </article>
+
+          <article class="tile">
+            <div class="tileBody">
+              <h3 class="tileTitle">Often replace</h3>
+              <p class="tileDesc">Battery replacement on an older scooter, controller plus wiring issues, or frame damage often crosses the point of diminishing returns.</p>
+              <a class="tileLink" href="#cost-drivers">See the cost drivers →</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- COST DRIVERS TABLE -->
+        <h2 class="sectionTitle" id="cost-drivers" style="margin-top:26px;">Typical cost drivers</h2>
+        <p style="margin:0 0 12px; color:var(--muted); line-height:1.6;">
+          These are practical patterns. Actual costs vary by model, availability, and whether you DIY or pay labor.
+          Battery and controller issues are the two that most often flip the decision.
+        </p>
+
+        <div class="tableWrap" role="region" aria-label="Repair vs replace table" tabindex="0">
+          <table>
+            <thead>
+              <tr>
+                <th>Component / problem</th>
+                <th>Why it matters</th>
+                <th>Decision impact</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Tube / tire / brake</td>
+                <td>Wear items. Predictable repair. Low risk.</td>
+                <td><span class="tag good">Fix</span></td>
+              </tr>
+              <tr>
+                <td>Charging port / charger</td>
+                <td>Can be simple, but sometimes masks battery/controller issues.</td>
+                <td><span class="tag warn">Depends</span></td>
+              </tr>
+              <tr>
+                <td>Controller / wiring</td>
+                <td>Diagnosis is the time sink; multiple failures can overlap.</td>
+                <td><span class="tag warn">Depends</span></td>
+              </tr>
+              <tr>
+                <td>Battery</td>
+                <td>One of the most expensive parts; older cells reduce future reliability.</td>
+                <td><span class="tag bad">Often replace</span></td>
+              </tr>
+              <tr>
+                <td>Frame damage</td>
+                <td>Safety issue. Repairs are rarely cost-effective.</td>
+                <td><span class="tag bad">Replace</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note" style="margin-top:18px;">
+          Safety note: if there is frame damage, overheating, a burning smell, or battery swelling, do not ride it.
+          Diagnose before charging again.
+        </div>
+
+      </section>
     </section>
   </main>
+
+  <footer>
+    <div class="footWrap">
+      <div>© <span id="y"></span> helper.diy</div>
+      <div>
+        <a class="fixpixieLink" href="https://fixpixie.com" style="text-decoration:none;">Try Fix Pixie</a>
+        <span style="margin:0 10px;color:var(--line);">|</span>
+        <a href="/" style="text-decoration:none;">Home</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
