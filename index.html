@@ -25,14 +25,6 @@
     gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
   </script>
 
-  <!-- =========================
-       ADSENSE PLACEHOLDER NOTE
-       - Leave the blocks below as placeholders until you have:
-         1) a real data-ad-client (ca-pub-xxxxxxxxxxxxxxx)
-         2) real data-ad-slot IDs
-       - When ready, uncomment the AdSense script and replace IDs.
-  ========================== -->
-
   <!-- AdSense (uncomment when approved + you have your publisher ID) -->
   <!--
   <script async
@@ -244,6 +236,12 @@
       letter-spacing:.4px;
       text-transform:uppercase;
     }
+    .sectionSub{
+      margin: -4px 0 14px;
+      color: var(--muted);
+      max-width: 78ch;
+      line-height: 1.5;
+    }
 
     /* Video grid */
     .grid3{
@@ -332,15 +330,6 @@
       padding: 10px;
       min-height: 90px;
     }
-    .adSlot strong{
-      display:block;
-      color: var(--text);
-      font-weight: 900;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      font-size: 11px;
-      margin-bottom: 4px;
-    }
     .adSlot--leaderboard{ min-height: 90px; }
     .adSlot--inline {
       padding: 16px;
@@ -385,8 +374,6 @@
       .h1{font-size:34px}
       .sectionTitle{font-size:28px}
       .heroTitle{font-size:28px}
-
-      /* sidebar skyscraper ad becomes normal block on mobile */
       .adSlot--sidebar{ position:static; min-height: 250px; }
     }
   </style>
@@ -433,6 +420,7 @@
       <aside class="sidebar" aria-label="DIY categories">
         <ul class="sideList">
           <li><a href="#featured">Featured guide</a></li>
+          <li><a href="#scooter-hub">Electric Scooter Repair Hub</a></li>
           <li><a href="#guides">DIY Repair Guides</a></li>
 
           <li style="margin-top:10px;"><a href="#garden">Garden Projects & Ideas</a></li>
@@ -493,7 +481,7 @@
           </div>
         </div>
 
-        <!-- IN-CONTENT AD (between hero and trending) -->
+        <!-- IN-CONTENT AD (between hero and hub) -->
         <div class="adBreak" aria-label="Advertisement">
           <div class="adSlot adSlot--inline" data-ad-placeholder="mid-hero-rectangle-1">
             <a href="#" aria-label="Sponsored link">
@@ -509,13 +497,121 @@
           </div>
         </div>
 
+        <!-- ELECTRIC SCOOTER REPAIR HUB -->
+        <h2 class="sectionTitle" id="scooter-hub">Electric Scooter Repair Hub</h2>
+        <p class="sectionSub">
+          Cost estimates, quick diagnostics, and repair versus replace decisions. Start with the page that matches your situation.
+        </p>
+
+        <div class="grid3">
+          <article class="tile">
+            <div class="thumb">
+              <img
+                src="https://github.com/rainer78/diyhelper/blob/main/img/helper-scooter-costs.png?raw=true"
+                alt="Electric scooter repair costs"
+                loading="lazy"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517504734587-2890819debab?auto=format&fit=crop&w=1600&q=80';"
+              />
+            </div>
+            <div class="tileBody">
+              <h3 class="tileTitle">How Much Does It Cost to Fix an Electric Scooter?</h3>
+              <p class="tileDesc">Realistic ranges for common repairs, and what changes the price.</p>
+              <a class="tileLink" href="/p/how-much-does-it-cost-to-fix-an-electric-scooter/">Open guide →</a>
+            </div>
+          </article>
+
+          <article class="tile">
+            <div class="thumb">
+              <img
+                src="https://github.com/rainer78/diyhelper/blob/main/img/helper-scooter-decide.png?raw=true"
+                alt="Repair versus replace decision"
+                loading="lazy"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1520975958225-203d5d2f7a3b?auto=format&fit=crop&w=1600&q=80';"
+              />
+            </div>
+            <div class="tileBody">
+              <h3 class="tileTitle">Is It Worth Fixing an Electric Scooter?</h3>
+              <p class="tileDesc">A simple decision framework based on cost, condition, and safety.</p>
+              <a class="tileLink" href="/p/is-it-worth-fixing-electric-scooter/">Open guide →</a>
+            </div>
+          </article>
+
+          <article class="tile">
+            <div class="thumb">
+              <img
+                src="https://github.com/rainer78/diyhelper/blob/main/img/helper-scooter-troubleshoot.png?raw=true"
+                alt="Electric scooter troubleshooting"
+                loading="lazy"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1581091215367-59ab6b1b3f1a?auto=format&fit=crop&w=1600&q=80';"
+              />
+            </div>
+            <div class="tileBody">
+              <h3 class="tileTitle">Troubleshooting: Start Here</h3>
+              <p class="tileDesc">Charging, power issues, flats, batteries. Quick checks first.</p>
+              <a class="tileLink" href="/p/electric-scooter-wont-turn-on/">Start troubleshooting →</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="grid3" style="margin-top:18px;">
+          <article class="tile">
+            <div class="thumb">
+              <img
+                src="https://github.com/rainer78/diyhelper/blob/main/img/helper-scooter-charge.png?raw=true"
+                alt="Scooter won’t charge"
+                loading="lazy"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1600&q=80';"
+              />
+            </div>
+            <div class="tileBody">
+              <h3 class="tileTitle">Scooter Won’t Charge</h3>
+              <p class="tileDesc">Most common causes, what to test, and when it is a battery issue.</p>
+              <a class="tileLink" href="/p/electric-scooter-wont-charge/">Open guide →</a>
+            </div>
+          </article>
+
+          <article class="tile">
+            <div class="thumb">
+              <img
+                src="https://github.com/rainer78/diyhelper/blob/main/img/helper-scooter-flat.png?raw=true"
+                alt="Flat tire repair cost"
+                loading="lazy"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1525104698733-9fbd6c5be1a5?auto=format&fit=crop&w=1600&q=80';"
+              />
+            </div>
+            <div class="tileBody">
+              <h3 class="tileTitle">Flat Tire Repair Cost</h3>
+              <p class="tileDesc">Tube vs tubeless, tools needed, and when a shop is cheaper.</p>
+              <a class="tileLink" href="/p/electric-scooter-flat-tire-fix-cost/">Open guide →</a>
+            </div>
+          </article>
+
+          <article class="tile">
+            <div class="thumb">
+              <img
+                src="https://github.com/rainer78/diyhelper/blob/main/img/helper-scooter-battery.png?raw=true"
+                alt="Battery replacement cost"
+                loading="lazy"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?auto=format&fit=crop&w=1600&q=80';"
+              />
+            </div>
+            <div class="tileBody">
+              <h3 class="tileTitle">Battery Replacement Cost</h3>
+              <p class="tileDesc">Typical price ranges, what to measure, and safety red flags.</p>
+              <a class="tileLink" href="/p/electric-scooter-battery-replacement-cost/">Open guide →</a>
+            </div>
+          </article>
+        </div>
+
+        <div style="margin-top:14px;">
+          <a class="btn fixpixieLink" href="https://fixpixie.com">Get step-by-step help in Fix Pixie</a>
+        </div>
+
         <!-- TRENDING -->
-        <h2 class="sectionTitle" id="trending">Trending DIY Videos</h2>
+        <h2 class="sectionTitle" id="trending" style="margin-top:34px;">Trending DIY Videos</h2>
 
         <!-- Row 1 -->
         <div class="grid3">
-
-          <!-- Video 1 -->
           <article class="tile">
             <div class="thumb">
               <img src="https://img.youtube.com/vi/GaVvWD1J5MM/hqdefault.jpg" alt="Top 5 Crafts of 2026" loading="lazy" />
@@ -528,7 +624,6 @@
             </div>
           </article>
 
-          <!-- Video 2 -->
           <article class="tile">
             <div class="thumb">
               <img src="https://img.youtube.com/vi/4dRIPxtCPDs/hqdefault.jpg" alt="Viral Weird DIY Crafts" loading="lazy" />
@@ -541,7 +636,6 @@
             </div>
           </article>
 
-          <!-- Video 3 -->
           <article class="tile">
             <div class="thumb">
               <img src="https://img.youtube.com/vi/0TrJveoiXng/hqdefault.jpg" alt="Top Masterable DIY Crafts" loading="lazy" />
@@ -553,7 +647,6 @@
               <a class="tileLink" href="https://www.youtube.com/watch?v=0TrJveoiXng" target="_blank" rel="noopener">Watch video →</a>
             </div>
           </article>
-
         </div>
 
         <!-- IN-FEED AD (between video rows) -->
@@ -574,8 +667,6 @@
 
         <!-- Row 2 -->
         <div class="grid3" style="margin-top:28px;">
-
-          <!-- Video 4 -->
           <article class="tile">
             <div class="thumb">
               <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Quick DIY Home Hacks" loading="lazy" />
@@ -588,7 +679,6 @@
             </div>
           </article>
 
-          <!-- Video 5 -->
           <article class="tile">
             <div class="thumb">
               <img src="https://img.youtube.com/vi/ScMzIvxBSi4/hqdefault.jpg" alt="Budget Workshop Builds" loading="lazy" />
@@ -601,7 +691,6 @@
             </div>
           </article>
 
-          <!-- Video 6 -->
           <article class="tile">
             <div class="thumb">
               <img src="https://img.youtube.com/vi/ZXsQAXx_ao0/hqdefault.jpg" alt="Beginner Woodworking Projects" loading="lazy" />
@@ -613,7 +702,6 @@
               <a class="tileLink" href="https://www.youtube.com/watch?v=ZXsQAXx_ao0" target="_blank" rel="noopener">Watch video →</a>
             </div>
           </article>
-
         </div>
 
         <!-- POST-TRENDING AD -->
@@ -635,7 +723,6 @@
         <!-- GUIDES (iFixit-powered) -->
         <h2 class="sectionTitle" id="guides" style="margin-top:28px;">DIY Repair Guides</h2>
 
-        <!-- This grid will be filled by the script -->
         <div id="ifixitGuidesGrid" class="grid3"></div>
 
         <!-- IN-FEED AD (after guides area) -->
